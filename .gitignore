@@ -1,3 +1,9 @@
+# MacOsX
+*.DS_Store
+
+# Emacs
+*~
+
 # Object files
 *.o
 *.ko
