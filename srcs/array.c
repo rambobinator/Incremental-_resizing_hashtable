@@ -19,16 +19,17 @@ ARRAY_ERROR		add_value(t_array *tab, int index, int val)
 t_array			*new_array(const int size)
 {
 	t_array		*new_array;
-	int			object_size;
+	int			*new_tab;
 	int			i;
 
 	i = -1;
-	object_size = sizeof(t_array) + (size * PTR_SIZE);
-	if (!(new_array = (t_array *)malloc(object_size)))
+	if (!(new_array = (t_array *)malloc(sizeof(t_array))))
+		return NULL;
+	if (!(new_tab = (int *)malloc(sizeof(int) * size)))
 		return NULL;
 	new_array->size = size;
 	new_array->filling_size = 0;
-	new_array->data = (int *)(new_array + sizeof(t_array));
+	new_array->data = new_tab;
 	while (++i < new_array->size)
 		new_array->data[i] = EMPTY;
 	return (new_array);

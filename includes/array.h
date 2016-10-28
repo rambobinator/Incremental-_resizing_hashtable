@@ -6,7 +6,6 @@
 #include "chained_list.h"
 
 #define EMPTY -1
-#define PTR_SIZE sizeof(int *)
 #define ARRAY_INIT_SIZE 10
 #define CRITIC_FILLING_PERCENT 70
 
