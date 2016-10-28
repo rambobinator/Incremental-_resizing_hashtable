@@ -15,6 +15,7 @@ typedef	enum	e_array_error
 {
 	OUT_OF_RANGE,
 	EXIST,
+	NOT_FOUND,
 	FULL,
 	CRITIC,
 	OK
@@ -28,6 +29,8 @@ typedef struct	s_array
 }				t_array;
 
 ARRAY_ERROR		add_value(t_array *tab, int index, int val);
+ARRAY_ERROR		get_value(t_array *tab, int index, int *val);
+
 void			del_array(t_array *array);
 t_array			*new_array(const int size);
 
