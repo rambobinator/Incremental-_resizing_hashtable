@@ -1,13 +1,12 @@
 #include "chained_list.h"
 
-void		list_append(t_list *lst, void *data)
+void		list_append_front(t_list **lst, void *data)
 {
-	t_list	*it;
+	t_list	*tmp;
 
-	it = lst;
-	while (it->next)
-		it = it->next;
-	it->next = list_new_node(data);
+	tmp = list_new_node(data);
+	tmp->next = *lst;
+	*lst = tmp;
 }
 
 void		list_map(t_list *lst, void (*f)(t_list, void *), void *args)
