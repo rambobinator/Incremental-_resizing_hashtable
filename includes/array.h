@@ -29,6 +29,7 @@ typedef struct	s_array
 }				t_array;
 
 ARRAY_ERROR		add_value(t_array *tab, int index, int val);
+ARRAY_ERROR		clear_index(t_array *tab, int index);
 ARRAY_ERROR		get_value(t_array *tab, int index, int *val);
 
 void			del_array(t_array *array);
