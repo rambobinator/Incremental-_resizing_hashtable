@@ -31,3 +31,20 @@ t_list		*list_new_node(void *data)
 	new_node->next = NULL;
 	return (new_node);
 }
+
+void		list_remove_node(t_list *head, t_list *node)
+{
+	t_list	*it;
+
+	it = head;
+	while (it)
+	{
+		if (it->next == node)
+		{
+			it->next = node->next;
+			free(node);
+			break ;
+		}
+		it = it->next;
+	}
+}

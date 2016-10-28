@@ -12,5 +12,6 @@ typedef struct		s_list
 void		list_append_front(t_list **lst, void *data);
 void		list_map(t_list *lst, void (*f)(t_list, void *), void *args);
 t_list		*list_new_node(void *data);
+void		list_remove_node(t_list *head, t_list *node);
 
 #endif
