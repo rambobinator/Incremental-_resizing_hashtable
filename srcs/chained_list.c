@@ -12,8 +12,9 @@ void		list_append(t_list *lst, void *data)
 
 void		list_map(t_list *lst, void (*f)(t_list, void *), void *args)
 {
-	t_list	*it = lst;
+	t_list	*it;
 
+	it = lst;
 	while (it)
 	{
 		f(*it, args);
