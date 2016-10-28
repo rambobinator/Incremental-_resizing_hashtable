@@ -16,6 +16,12 @@ ARRAY_ERROR		add_value(t_array *tab, int index, int val)
 	return (filling_percent > CRITIC_FILLING_PERCENT) ? CRITIC : OK;
 }
 
+void			del_array(t_array *array)
+{
+	free(array->data);
+	free(array);
+}
+
 t_array			*new_array(const int size)
 {
 	t_array		*new_array;
